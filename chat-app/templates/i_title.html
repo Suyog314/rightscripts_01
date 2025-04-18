@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_title.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/docx.min.js"></script>
+
+
+</head>
+<body>
+
+     <!-- .......................NavBar...............-->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="RightScripts Logo">
+            </a>
+        </div>
+        
+
+        <div class="nav-buttons">
+            <div class="dropdown">
+                <button class="dropdown-btn">Language</button>
+                <div class="dropdown-content">
+                    <a href="#">English</a>
+                    <a href="#">Hindi</a>
+                    <a href="#">Marathi</a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <button class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <!-- .......................Title Section....................-->
+
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar_buttons">
+                <button class="sidebar-btn active">Title</button>
+                <button class="sidebar-btn">Introduction</button>
+                <button class="sidebar-btn">Objectives</button>
+                <button class="sidebar-btn">Content</button>
+                <button class="sidebar-btn">Reflection Spot</button>
+                <button class="sidebar-btn">Summary</button>
+                <button class="sidebar-btn">Finalization</button>
+            </div>
+            <p id="count">3/7</p>
+            <div class="time_container">
+                <h2>Set Video Length</h2>
+                
+                <label for="minuteInput">Min:</label>
+                <input type="number" id="minuteInput" min="0" step="1" value="0">
+            </div>
+            <div class="platform">
+                <textarea placeholder="platform you want the script for..."></textarea>
+            </div>
+
+        </div>
+    
+        <div class="content" id="finalization-content">
+            <h2>Enter Video Title here</h2>
+            <textarea placeholder="Enter video details..."></textarea>
+            <div class="count_and_time">
+                <p id="word-count">Word count: 0</p>
+                <p id="speech-time">Estimated speech time: 0 min</p>
+            </div>
+           
+
+            <!-- for video finalization -->
+            <div class="finalization-buttons">
+                <button id="refine-btn">Refine</button>
+                <button id="download-btn">Download</button>
+            </div>
+            <!-- for video finalization -->
+            
+        </div>
+
+    </div>
+
+<div class="travels">
+    <div class="travels_left">
+        <button class="help" onclick="toggleHelp()">Help</button>
+        <button class="Example" onclick="toggleExample()">Example</button>
+    </div>
+    <div class="travels_right">
+        <button class="Previous"> Previous</button>
+        <button class="Next"> Next</button>
+    </div>
+</div>
+
+<div class="help-example-box">
+    
+</div>
+<script src="{{ url_for('static', filename='script_title.js') }}"></script>
+
+</body>
+</html>
